@@ -28,10 +28,10 @@ export const studentApi = api.injectEndpoints({
       providesTags: (result) => (result ? [{ type: Tag.STUDENTS, id: result.id }] : [])
     }),
     reviewStudentStatus: builder.mutation<{ message: string }, ReviewStudentStatusRequest>({
-      query: ({ id, status }) => ({
+      query: ({ id, status, reviewerId }) => ({
         url: `/students/${id}/status`,
         method: 'POST',
-        body: { status }
+        body: { status, reviewerId }
       }),
       invalidatesTags: (_result, _error, { id }) => [{ type: Tag.STUDENTS, id }]
     }),

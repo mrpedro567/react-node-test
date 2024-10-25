@@ -88,6 +88,7 @@ export type AddStudent = {
 export type ReviewStudentStatusRequest = {
   id: number;
   status: boolean;
+  reviewerId: number;
 };
 
 export type GetTeachers = {

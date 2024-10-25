@@ -51,6 +51,7 @@ const addNewStudent = async (payload) => {
 
 const updateStudent = async (payload) => {
     const result = await addOrUpdateStudent(payload);
+    
     if (!result.status) {
         throw new ApiError(500, result.message);
     }

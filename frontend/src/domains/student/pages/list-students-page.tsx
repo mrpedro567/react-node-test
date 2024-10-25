@@ -32,6 +32,7 @@ export const ListStudents: React.FC = () => {
 
   const searchStudent = (payload: StudentFilter) => {
     setFilter(payload);
+    console.log(data);
   };
 
   return (
